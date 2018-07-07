@@ -1,5 +1,5 @@
 // ACTIONS
-const TOGGLE = 'TOGGLE';
+export const TOGGLE = 'TOGGLE';
 export const toggleOn = () => ({
   type: TOGGLE,
 });
