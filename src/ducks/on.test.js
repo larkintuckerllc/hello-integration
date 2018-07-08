@@ -8,6 +8,15 @@ describe('on duck', () => {
     expect(toggleOn()).toEqual(result);
   });
 
+  it('reducer initialized false', () => {
+    const initialState = undefined;
+    const nextState = false;
+    const action = {
+      type: 'UNKNOWN',
+    };
+    expect(on(initialState, action)).toBe(nextState);
+  });
+
   it('reducer should ignore unknown actions', () => {
     const initialState = false;
     const action = {
