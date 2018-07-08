@@ -12,14 +12,18 @@ const getDefaultProps = () => ({
 
 describe('RoomView component', () => {
   it('shallow renders without crashing (off)', () => {
+    const result = 'Off';
     const defaultProps = getDefaultProps();
     const wrapper = shallow(<RoomView {...defaultProps} />);
-    expect(wrapper).toMatchSnapshot();
+    const roomLightEl = wrapper.find('#room__light');
+    expect(roomLightEl.text()).toBe(result);
   });
 
   it('shallow renders without crashing (on)', () => {
+    const result = 'On';
     const { on, ...defaultProps } = getDefaultProps();
     const wrapper = shallow(<RoomView on={true} {...defaultProps} />);
-    expect(wrapper).toMatchSnapshot();
+    const roomLightEl = wrapper.find('#room__light');
+    expect(roomLightEl.text()).toBe(result);
   });
 });
